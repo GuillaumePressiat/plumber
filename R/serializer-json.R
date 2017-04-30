@@ -5,7 +5,7 @@ jsonSerializer <- function(){
     tryCatch({
       json <- jsonlite::toJSON(val)
 
-      res$setHeader("Content-Type", "application/json")
+      res$setHeader("Content-Type", "application/json ; charset=utf8")
       res$body <- json
 
       return(res$toResponse())
@@ -23,7 +23,7 @@ unboxedJsonSerializer <- function(){
     tryCatch({
       json <- jsonlite::toJSON(val, auto_unbox = TRUE)
 
-      res$setHeader("Content-Type", "application/json")
+      res$setHeader("Content-Type", "application/json  ; charset=utf8")
       res$body <- json
 
       return(res$toResponse())
